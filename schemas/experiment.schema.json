@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meta-ads-agent.local/schemas/experiment.schema.json",
+  "title": "Meta Ads Experiment Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "hypothesis", "primaryVariable", "successMetric", "guardrails", "decisionRule", "status"],
+  "properties": {
+    "id": { "type": "string", "minLength": 3 },
+    "hypothesis": { "type": "string", "minLength": 10 },
+    "primaryVariable": { "type": "string", "minLength": 1 },
+    "controlledVariables": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "successMetric": { "type": "string", "minLength": 1 },
+    "guardrails": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "minimumRunCondition": { "type": "string" },
+    "decisionRule": { "type": "string", "minLength": 1 },
+    "rollbackCondition": { "type": "string" },
+    "status": { "enum": ["DRAFT", "APPROVED", "RUNNING", "COMPLETED", "STOPPED"] }
+  }
+}

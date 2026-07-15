@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meta-ads-agent.local/schemas/audit.schema.json",
+  "title": "Meta Ads Audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "scope", "createdAt", "findings", "missingData", "overallConfidence"],
+  "properties": {
+    "id": { "type": "string", "minLength": 3 },
+    "scope": { "type": "string", "minLength": 1 },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "severity", "observation", "recommendation", "confidence"],
+        "properties": {
+          "id": { "type": "string" },
+          "severity": { "enum": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"] },
+          "observation": { "type": "string" },
+          "evidence": { "type": "array", "items": { "type": "string" } },
+          "recommendation": { "type": "string" },
+          "confidence": { "enum": ["LOW", "MEDIUM", "HIGH"] }
+        }
+      }
+    },
+    "missingData": { "type": "array", "items": { "type": "string" } },
+    "overallConfidence": { "enum": ["LOW", "MEDIUM", "HIGH"] }
+  }
+}

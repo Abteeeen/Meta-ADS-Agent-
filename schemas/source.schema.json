@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meta-ads-agent.local/schemas/source.schema.json",
+  "title": "Research Source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "publisher", "url", "sourceType", "extractedAt", "status"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{2,99}$" },
+    "title": { "type": "string", "minLength": 1 },
+    "publisher": { "type": "string", "minLength": 1 },
+    "url": { "type": "string", "format": "uri" },
+    "sourceType": { "enum": ["OFFICIAL_DOCUMENTATION", "OFFICIAL_POLICY", "API_REFERENCE", "VIDEO_COURSE", "ARTICLE", "CASE_STUDY", "ACCOUNT_DATA", "COMMENT_THREAD", "INTERNAL_PROCESS"] },
+    "publishedAt": { "type": "string", "format": "date" },
+    "extractedAt": { "type": "string", "format": "date" },
+    "status": { "enum": ["REGISTERED", "IN_REVIEW", "REVIEWED", "OUTDATED", "ARCHIVED"] },
+    "notes": { "type": "string" }
+  }
+}

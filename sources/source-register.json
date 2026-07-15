@@ -1,0 +1,55 @@
+[
+  {
+    "id": "youtube-t0k4WndiQxk",
+    "title": "Learn Meta Ads Step-by-Step | Full Course",
+    "publisher": "Jim's Digital Marketing",
+    "url": "https://youtu.be/t0k4WndiQxk",
+    "sourceType": "VIDEO_COURSE",
+    "publishedAt": "2025-10-23",
+    "extractedAt": "2026-07-15",
+    "status": "REGISTERED",
+    "notes": "Course guidance only. Extract claims with timecodes and classify individually."
+  },
+  {
+    "id": "youtube-BiRlATLFEww",
+    "title": "f*ck it, full facebook ads course for beginners (12 hours)",
+    "publisher": "Brandon Willington",
+    "url": "https://youtu.be/BiRlATLFEww",
+    "sourceType": "VIDEO_COURSE",
+    "publishedAt": "2026-05-31",
+    "extractedAt": "2026-07-15",
+    "status": "REGISTERED",
+    "notes": "Course guidance only. Separate general principles from account-specific claims."
+  },
+  {
+    "id": "youtube-PakHu2sKTvQ",
+    "title": "The BEST Meta Ads Course From Setup to Scaling Success",
+    "publisher": "Professor Charley T",
+    "url": "https://youtu.be/PakHu2sKTvQ",
+    "sourceType": "VIDEO_COURSE",
+    "publishedAt": "2024-10-22",
+    "extractedAt": "2026-07-15",
+    "status": "REGISTERED",
+    "notes": "Review UI and settings guidance for freshness before reuse."
+  },
+  {
+    "id": "meta-marketing-api",
+    "title": "Meta Marketing API Documentation",
+    "publisher": "Meta",
+    "url": "https://developers.facebook.com/docs/marketing-api/",
+    "sourceType": "OFFICIAL_DOCUMENTATION",
+    "extractedAt": "2026-07-15",
+    "status": "REGISTERED",
+    "notes": "Primary source for API behavior; validate freshness at implementation time."
+  },
+  {
+    "id": "meta-advertising-standards",
+    "title": "Meta Advertising Standards",
+    "publisher": "Meta",
+    "url": "https://transparency.meta.com/policies/ad-standards/",
+    "sourceType": "OFFICIAL_POLICY",
+    "extractedAt": "2026-07-15",
+    "status": "REGISTERED",
+    "notes": "Primary policy source; final enforcement remains Meta's decision."
+  }
+]
