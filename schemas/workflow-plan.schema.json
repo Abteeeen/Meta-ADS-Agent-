@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meta-ads-agent.local/schemas/workflow-plan.schema.json",
+  "title": "Meta Ads Workflow Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["overallStatus", "missingData", "warnings", "nextAction", "steps"],
+  "properties": {
+    "overallStatus": { "enum": ["BLOCKED", "READY_FOR_STRATEGY"] },
+    "missingData": { "type": "array", "items": { "type": "string" } },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "nextAction": { "type": "string" },
+    "steps": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "description", "status", "missingData"],
+        "properties": {
+          "id": { "type": "string" },
+          "description": { "type": "string" },
+          "status": { "enum": ["READY", "PENDING", "BLOCKED"] },
+          "missingData": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

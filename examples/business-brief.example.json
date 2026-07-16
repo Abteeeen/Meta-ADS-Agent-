@@ -1,0 +1,11 @@
+{
+  "businessModel": "LEAD_GENERATION",
+  "market": "United States",
+  "offer": "Free roof inspection",
+  "primaryGoal": "LEADS",
+  "conversionEvent": "Qualified lead",
+  "landingDestination": "https://example.com/inspection",
+  "monthlyBudget": 3000,
+  "accountMaturity": "EXISTING_ACCOUNT",
+  "trackingStatus": "VERIFIED"
+}
