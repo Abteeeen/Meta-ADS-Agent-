@@ -8,11 +8,13 @@
 | Capability | Status | Evidence |
 | --- | --- | --- |
 | Agency organization and company hierarchy | Implemented | `organizations`, `organization_members`, `companies`, and `company_profiles` tables. |
-| Private company workspace | Partially implemented | Email sign-in, organization bootstrap, and a first-company flow exist in the web app. The onboarding wizard is not yet built. |
-| Tenant isolation | Implemented and needs regression coverage | All current public tables have RLS enabled. Company records are scoped through organization membership. |
+| Private company workspace | Implemented for the first client flow | Email sign-in, organization bootstrap, multi-company creation, structured onboarding, company selection, and client access are available in the web app. |
+| Tenant isolation | Implemented with regression coverage | All current public tables have RLS enabled. Organization and company memberships are tested as separate scopes. |
+| Client roles and invitations | Implemented | Operators can issue hashed, expiring invitations for client admins and viewers; acceptance requires the matching authenticated email. |
+| Agency team invitations | Not implemented | Organization roles exist, but inviting additional agency owners, operators, or viewers still needs a dedicated flow. |
 | Company memory and evidence | Implemented | Company memory, evidence gaps, knowledge documents, reviewed claims, and retrieval tables are present. |
 | Intelligence orchestration | Implemented | Company Intelligence Run records bounded specialist tasks and routes unknowns to research, client confirmation, or an approved connection. |
-| Human approval records | Foundation implemented | Approval requests exist; no campaign-write approval workflow exists yet. |
+| Human approval records | Implemented for agent artifacts | The workspace can create, approve, and reject stored requests. No campaign-write approval workflow exists yet. |
 | Meta integration | Not implemented | No OAuth callback, token vault, asset discovery, API adapter, synchronization, or write endpoint exists. |
 | Campaign drafts and paused creation | Not implemented | There is no normalized campaign-draft model or Meta write layer. |
 | CRM and outcome learning | Architecture only | The connection placeholder and lead-quality model exist; ingestion and attribution are not implemented. |
@@ -21,7 +23,7 @@
 
 ## Current Database Baseline
 
-The connected Supabase project contains five applied migrations and eighteen RLS-enabled public tables. It currently contains reviewed global knowledge records but no organization, company, connection, or client-account data.
+The connected Supabase project contains nine applied migrations and twenty-one RLS-enabled public tables. It includes organization/company membership, onboarding, evidence and memory, intelligence runs, approval records, and reviewed global knowledge.
 
 Security Advisor returned no active security findings on the audit date. The Performance Advisor still reports policy-shape and unused-index suggestions; these are tracked as a hardening task before broad client rollout, not silently treated as security clearance.
 
@@ -35,7 +37,7 @@ Security Advisor returned no active security findings on the audit date. The Per
 ## Delivery Sequence
 
 1. **Milestone 1: Audit and foundation guards** - record the baseline; maintain RLS and secret-exposure regression checks; remove unsafe findings.
-2. **Milestone 2: Multi-tenant onboarding** - invitations, company selector, complete company intake, role-aware client access, and company status lifecycle.
+2. **Milestone 2: Multi-tenant onboarding** - client invitations, company selector, intake, and role-aware access are implemented. Agency-team invitations, role management, invitation revocation UI, and the complete company status lifecycle remain.
 3. **Milestone 3: Meta read-only integration** - server-only OAuth, encrypted token references, asset discovery, mock adapter, normalized read sync, and clear connection failures.
 4. **Milestone 4: Intelligence workspaces** - source-linked strategy, creative, diagnosis, reporting, and retrieval using only approved company context and synced data.
 5. **Milestone 5: Drafts and approvals** - normalized paused campaign drafts, exact change previews, approval center, audit log, and mocked write tests.
