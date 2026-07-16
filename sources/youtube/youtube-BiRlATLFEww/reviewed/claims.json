@@ -1,0 +1,167 @@
+[
+  {
+    "id": "claim-BiRlATLFEww-01",
+    "statement": "Marketing's usual incentive (minimize cost per lead) and sales' usual incentive (lead quality) are said to structurally conflict, so the presenter's operating rule is to judge advertising success as a financial/business outcome that balances both, rather than optimizing cost-per-lead in isolation.",
+    "sourceId": "youtube-BiRlATLFEww",
+    "sourceLocation": "Video timecode 00:05:03-00:05:23 (raw/transcript-excerpts.txt)",
+    "classification": "AGENCY_RULE",
+    "confidence": "LOW",
+    "conditions": [],
+    "limitations": [
+      "Framed as the presenter's personal operating philosophy, not a measured comparison across accounts."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-BiRlATLFEww-02",
+    "statement": "The video teaches a 'dials, not switches' mental model: treat levers such as ad spend, targeting friction, and follow-up cadence as continuously adjustable dials to be balanced against each other (e.g., lead volume vs. lead quality), rather than binary on/off decisions.",
+    "sourceId": "youtube-BiRlATLFEww",
+    "sourceLocation": "Video timecode 00:52:30-01:02:35 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-BiRlATLFEww-03",
+    "statement": "The video presents a 'bell curve' model, credited to a third party ('Jeremy Haynes'), in which increasing ad spend moves targeting into progressively colder audiences, causing ROAS to decline as spend increases.",
+    "sourceId": "youtube-BiRlATLFEww",
+    "sourceLocation": "Video timecode 00:21:11-00:21:31 (raw/transcript-excerpts.txt)",
+    "classification": "HYPOTHESIS",
+    "confidence": "LOW",
+    "conditions": [],
+    "limitations": [
+      "Explicitly attributed to a third party with no data, chart, or citation shown on screen; presented as a mental model, not a measured result."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-BiRlATLFEww-04",
+    "statement": "'Andromeda' is described as a Meta ads algorithm update that rolled out in 'June or July 2025' and is said to draw on a very large number of behavioral signals per user, with the speaker adding an unquantified caveat ('I reckon it's more') about the true scope.",
+    "sourceId": "youtube-BiRlATLFEww",
+    "sourceLocation": "Video timecode 00:24:12-00:25:12 (raw/transcript-excerpts.txt)",
+    "classification": "OUTDATED_OR_UNVERIFIED",
+    "confidence": "LOW",
+    "conditions": [],
+    "limitations": [
+      "Speaker self-flags uncertainty about the details ('I reckon'); no source cited for the rollout date or data-volume claim.",
+      "Should be checked against Meta's own announcements before being used as a dated platform fact."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-BiRlATLFEww-05",
+    "statement": "The video teaches 'pixel conditioning': deliberately preventing disqualified or wrong-industry form submissions from firing the same 'lead' pixel event as qualified leads (e.g., routing disqualified prospects to a separate disqualification page) so Meta's optimization does not learn to target the wrong audience.",
+    "sourceId": "youtube-BiRlATLFEww",
+    "sourceLocation": "Video timecode 03:07:09-03:07:29 and 04:32:21-04:36:23 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [
+      "Most directly applicable to lead-generation, service-based businesses using a qualification form/survey."
+    ],
+    "limitations": [],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-BiRlATLFEww-06",
+    "statement": "The presenters recount a specific account where a pixel had reportedly been conditioned on the wrong signal to the point that its resulting audience skewed toward an unrelated demographic ('literally everyone was a rapper'), which they say forced them to abandon that pixel and start a new one rather than recover it.",
+    "sourceId": "youtube-BiRlATLFEww",
+    "sourceLocation": "Video timecode 04:36:23 (raw/transcript-excerpts.txt)",
+    "classification": "CASE_STUDY",
+    "confidence": "LOW",
+    "conditions": [],
+    "limitations": [
+      "Single anecdote about the presenters' own account; no account data shown, and the exact cause is not diagnosed on camera beyond 'pixel conditioning' gone wrong."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-BiRlATLFEww-07",
+    "statement": "Average social video view duration is stated as about 1.8 seconds, with a claim that Meta previously let advertisers optimize for 3-second video views before shortening the standard optimization window to 2 seconds as attention spans fell.",
+    "sourceId": "youtube-BiRlATLFEww",
+    "sourceLocation": "Video timecode 00:56:11-00:56:51 (raw/transcript-excerpts.txt)",
+    "classification": "OUTDATED_OR_UNVERIFIED",
+    "confidence": "LOW",
+    "conditions": [],
+    "limitations": [
+      "Introduced as a 'fun fact' with no source; both the duration figure and the claimed history of Meta's optimization-event options are not independently verified in this review."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-BiRlATLFEww-08",
+    "statement": "Top-of-funnel ad messaging should center on the prospect's own problems and desires ('them'); the video teaches that only lower-funnel messaging should pivot to talking about the business or solution ('you'), because top-of-funnel audiences are not yet paying attention to the advertiser.",
+    "sourceId": "youtube-BiRlATLFEww",
+    "sourceLocation": "Video timecode 00:56:51-00:57:11 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-BiRlATLFEww-09",
+    "statement": "Before writing any ad creative, the business owner is walked through a structured 'customer avatar' exercise (done live, on a whiteboard, with the presenter), and the video teaches that ad hooks, pain points, and messaging variations should be drawn directly from that avatar's stated problems.",
+    "sourceId": "youtube-BiRlATLFEww",
+    "sourceLocation": "Video timecode 02:04:13, 05:48:36, 06:35:06 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-BiRlATLFEww-10",
+    "statement": "Meta's broader audience-expansion ('Advantage+'-style) delivery is framed informally as 'give it 50 ads and let Andromeda figure it out' -- i.e., once a pixel is well-conditioned, the recommendation is a high volume of ad variations rather than manual audience narrowing.",
+    "sourceId": "youtube-BiRlATLFEww",
+    "sourceLocation": "Video timecode 05:35:08 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "LOW",
+    "conditions": [],
+    "limitations": [
+      "Described colloquially, without specifying which Advantage+ setting or campaign type this refers to."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-BiRlATLFEww-11",
+    "statement": "The video walks through a pixel setup path as of its publish date: Meta Business Suite to Ads Manager to Events Manager to 'connect data' to 'set up manually' to 'Meta Pixel only', then copying the pixel code into a funnel builder's head-tracking field and mapping the 'lead' event to a form-submission action (plus pasting the pixel ID into a scheduling tool's settings for two-step funnels).",
+    "sourceId": "youtube-BiRlATLFEww",
+    "sourceLocation": "Video timecode 04:41:47-04:46:09 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "LOW",
+    "conditions": [
+      "Tied to a specific funnel-builder UI (GoHighLevel) and Meta's UI as of this video's publish date (2026-05-31)."
+    ],
+    "limitations": [
+      "UI walkthroughs go stale quickly; verify current menu labels/paths in Meta Events Manager before following step-by-step."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-BiRlATLFEww-12",
+    "statement": "The presenters describe a standing internal rule: if a booked lead complains about follow-up text messages or emails, their booking is deleted outright, on the reasoning that 'previous behavior is incredibly predictive of future behavior.'",
+    "sourceId": "youtube-BiRlATLFEww",
+    "sourceLocation": "Video timecode 01:02:14-01:02:35 (raw/transcript-excerpts.txt)",
+    "classification": "AGENCY_RULE",
+    "confidence": "LOW",
+    "conditions": [],
+    "limitations": [
+      "Internal operating preference for one program/business, not a Meta requirement or a broadly tested rule."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  }
+]
