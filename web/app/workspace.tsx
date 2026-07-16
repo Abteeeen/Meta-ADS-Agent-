@@ -19,6 +19,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
+import { WorkspaceConnection } from "./workspace-connection";
+
 const steps = [
   { id: "brief", label: "Business brief", detail: "Core offer and conversion goal", state: "complete" },
   { id: "strategy", label: "Strategy brief", detail: "Evidence-led recommendation", state: "ready" },
@@ -37,6 +39,7 @@ const nav = [
 export function AgencyWorkspace() {
   const [activeStep, setActiveStep] = useState("strategy");
   const [notice, setNotice] = useState("Strategy brief is ready for review.");
+  const [companyName, setCompanyName] = useState("Security Course Agency");
 
   function selectStep(id: string) {
     setActiveStep(id);
@@ -79,7 +82,7 @@ export function AgencyWorkspace() {
           <div className="breadcrumb">
             <span>Workspaces</span>
             <ChevronRight size={15} />
-            <strong>Security Course Agency</strong>
+            <strong>{companyName}</strong>
           </div>
           <div className="topbar-actions">
             <span className="demo-badge">Demo workspace</span>
@@ -93,7 +96,7 @@ export function AgencyWorkspace() {
           <section className="workspace-heading" aria-labelledby="workspace-title">
             <div>
               <p className="eyebrow">Lead generation / Security education</p>
-              <h1 id="workspace-title">Security Course Agency</h1>
+              <h1 id="workspace-title">{companyName}</h1>
               <p className="subhead">Qualified enrollment leads for a professional security training program.</p>
             </div>
             {/* Remote demo imagery is intentionally not sent through an image-optimization service. */}
@@ -104,6 +107,8 @@ export function AgencyWorkspace() {
               src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=720&q=80"
             />
           </section>
+
+          <WorkspaceConnection onCompanyReady={setCompanyName} />
 
           <section className="signal-strip" aria-label="Workspace status">
             <div>
