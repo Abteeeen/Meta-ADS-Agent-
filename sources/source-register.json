@@ -81,5 +81,55 @@
     "extractedAt": "2026-07-16",
     "status": "REVIEWED",
     "notes": "Primary source for current Queensland licence requirements. Use to review training and licence claims before publishing ads."
+  },
+  {
+    "id": "meta-lead-ads-forms",
+    "title": "Lead ads with forms",
+    "publisher": "Meta",
+    "url": "https://www.facebook.com/business/ads/ad-objectives/lead-generation/lead-ads-with-forms",
+    "sourceType": "OFFICIAL_DOCUMENTATION",
+    "extractedAt": "2026-07-16",
+    "status": "REVIEWED",
+    "notes": "Official source for lead form, website form, mixed lead strategy, CRM lead retrieval, and conversion-leads concepts. Account eligibility and product availability must be checked during setup."
+  },
+  {
+    "id": "meta-lead-ads-messaging",
+    "title": "Lead ads that click to message",
+    "publisher": "Meta",
+    "url": "https://www.facebook.com/business/ads/ad-objectives/lead-generation/lead-ads-with-messaging",
+    "sourceType": "OFFICIAL_DOCUMENTATION",
+    "extractedAt": "2026-07-16",
+    "status": "REVIEWED",
+    "notes": "Official source for messaging lead routes and chat qualification guidance. Messaging availability depends on account, destination, and region."
+  },
+  {
+    "id": "meta-conversions-api",
+    "title": "About Conversions API",
+    "publisher": "Meta",
+    "url": "https://www.facebook.com/business/help/AboutConversionsAPI",
+    "sourceType": "OFFICIAL_DOCUMENTATION",
+    "extractedAt": "2026-07-16",
+    "status": "REVIEWED",
+    "notes": "Primary source for website, CRM, offline, and messaging event measurement. Data handling and event design require privacy review."
+  },
+  {
+    "id": "asqa-information-transparency",
+    "title": "Practice Guide - Information and transparency",
+    "publisher": "Australian Skills Quality Authority",
+    "url": "https://legacy.asqa.gov.au/rtos/2025-standards-rtos/practice-guides/practice-guide-information-and-transparency",
+    "sourceType": "OFFICIAL_POLICY",
+    "extractedAt": "2026-07-16",
+    "status": "REVIEWED",
+    "notes": "Primary RTO marketing and advertising guidance, including claim verification and employment-outcome restrictions."
+  },
+  {
+    "id": "oaic-direct-marketing",
+    "title": "Direct marketing",
+    "publisher": "Office of the Australian Information Commissioner",
+    "url": "https://www.oaic.gov.au/privacy/privacy-guidance-for-organisations-and-government-agencies/organisations/direct-marketing",
+    "sourceType": "OFFICIAL_POLICY",
+    "extractedAt": "2026-07-16",
+    "status": "REVIEWED",
+    "notes": "Australian privacy, consent, SMS, and telemarketing guidance for lead follow-up. Obtain legal/compliance advice for the client's implementation."
   }
 ]
