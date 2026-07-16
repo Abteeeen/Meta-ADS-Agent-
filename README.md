@@ -25,6 +25,7 @@ schemas/     JSON Schema contracts for structured outputs and records
 agent/       Application and integration code, including the company-intelligence planner
 evals/       Evaluation cases and rubrics (created in Phase 3)
 examples/    Safe, synthetic example inputs and outputs (created in Phase 2)
+workspaces/  Local, company-specific operating workspaces; only the template is committed
 ```
 
 ## Guardrails
@@ -40,6 +41,10 @@ examples/    Safe, synthetic example inputs and outputs (created in Phase 2)
 Codex owns the technical contracts, product architecture, implementation, and evaluations. Claude owns structured research extraction, learning material, copy/creative ideation, and agency playbooks. Both agents must use the source policy and keep their work small, reviewable, and linked to a source or decision record.
 
 See [the full allocation](docs/WORK_ALLOCATION.md).
+
+## Applying the system to a real company
+
+Use the committed [company workspace template](workspaces/README.md) to apply the generic agent to a specific business. Active company folders are intentionally ignored by Git because this public repository should not contain client data or account details.
 
 ## Engineering checks
 

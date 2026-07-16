@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meta-ads-agent.local/schemas/company-profile.schema.json",
+  "title": "Company Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["companyName", "businessModel", "market", "offer", "primaryGoal", "conversionEvent"],
+  "properties": {
+    "companyName": { "type": "string", "minLength": 1 },
+    "businessModel": { "enum": ["ECOMMERCE", "LEAD_GENERATION", "LOCAL_SERVICE", "B2B", "INFO_PRODUCT", "APP", "OTHER"] },
+    "market": { "type": "string", "minLength": 1 },
+    "offer": { "type": "string", "minLength": 1 },
+    "primaryGoal": { "enum": ["SALES", "LEADS", "APPOINTMENTS", "TRIALS", "APP_INSTALLS", "AWARENESS"] },
+    "conversionEvent": { "type": "string", "minLength": 1 },
+    "priceOrLeadValue": { "type": "string" },
+    "grossMarginNotes": { "type": "string" },
+    "geography": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "constraints": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+  }
+}
