@@ -17,13 +17,14 @@ import {
   Target,
   UsersRound,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { WorkspaceConnection } from "./workspace-connection";
 import { CompanyIntelligencePanel } from "./company-intelligence-panel";
 import { CompanyOnboardingPanel } from "./company-onboarding-panel";
 import { ApprovalCenterPanel } from "./approval-center-panel";
 import { TeamAccessPanel } from "./team-access-panel";
+import { configureSupabaseBrowserClient } from "./supabase-browser";
 
 const steps = [
   { id: "brief", label: "Business brief", detail: "Core offer and conversion goal", state: "complete" },
@@ -44,6 +45,23 @@ export function AgencyWorkspace() {
   const [activeStep, setActiveStep] = useState("strategy");
   const [notice, setNotice] = useState("Strategy brief is ready for review.");
   const [companyName, setCompanyName] = useState("Security Course Agency");
+  const [configurationLoaded, setConfigurationLoaded] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/public-config", { cache: "no-store" })
+      .then((response) => response.json())
+      .then((config: { supabaseUrl?: string; supabasePublishableKey?: string }) => {
+        if (config.supabaseUrl && config.supabasePublishableKey) {
+          configureSupabaseBrowserClient(config.supabaseUrl, config.supabasePublishableKey);
+        }
+      })
+      .catch(() => undefined)
+      .finally(() => {
+        if (active) setConfigurationLoaded(true);
+      });
+    return () => { active = false; };
+  }, []);
 
   function selectStep(id: string) {
     setActiveStep(id);
@@ -112,11 +130,19 @@ export function AgencyWorkspace() {
             />
           </section>
 
-          <WorkspaceConnection onCompanyReady={setCompanyName} />
-          <TeamAccessPanel />
-          <CompanyOnboardingPanel />
-          <CompanyIntelligencePanel />
-          <ApprovalCenterPanel />
+          {configurationLoaded ? (
+            <>
+              <WorkspaceConnection onCompanyReady={setCompanyName} />
+              <TeamAccessPanel />
+              <CompanyOnboardingPanel />
+              <CompanyIntelligencePanel />
+              <ApprovalCenterPanel />
+            </>
+          ) : (
+            <section className="connection-panel" aria-live="polite">
+              <div className="connection-copy"><ShieldCheck size={20} /><div><strong>Connecting secure workspace</strong><span>Loading company access and sign-in.</span></div></div>
+            </section>
+          )}
 
           <section className="signal-strip" aria-label="Workspace status">
             <div>

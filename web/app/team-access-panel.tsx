@@ -153,9 +153,11 @@ export function TeamAccessPanel() {
       <p className="team-copy">Agency members can work across assigned companies. Client members receive access only to the selected company and never to another client workspace.</p>
       <div className="company-select-row">
         <label htmlFor="access-company-selector">Company</label>
-        <select disabled={loading || companies.length === 0} id="access-company-selector" onChange={(event) => { setCompanyId(event.target.value); void loadAccess(event.target.value); }} value={companyId}>
-          {companies.map((company) => <option key={company.id} value={company.id}>{company.name}</option>)}
-        </select>
+        {companies.length > 0 ? (
+          <select disabled={loading} id="access-company-selector" onChange={(event) => { setCompanyId(event.target.value); void loadAccess(event.target.value); }} value={companyId}>
+            {companies.map((company) => <option key={company.id} value={company.id}>{company.name}</option>)}
+          </select>
+        ) : <span className="empty-company-note">Sign in above, then create your first company workspace.</span>}
       </div>
       {loading ? <p className="team-message"><LoaderCircle size={15} /> Loading access...</p> : (
         <>

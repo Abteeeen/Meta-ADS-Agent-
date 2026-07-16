@@ -189,9 +189,11 @@ export function CompanyOnboardingPanel() {
       <p className="onboarding-copy">Only company members can view this intake. The agent uses approved and confirmed information; it keeps missing information visible instead of filling gaps with guesses.</p>
       <div className="company-select-row">
         <label htmlFor="company-selector">Company</label>
-        <select disabled={loading || companies.length === 0} id="company-selector" onChange={(event) => { setCompanyId(event.target.value); void loadCompany(event.target.value); }} value={companyId}>
-          {companies.map((company) => <option key={company.id} value={company.id}>{company.name}</option>)}
-        </select>
+        {companies.length > 0 ? (
+          <select disabled={loading} id="company-selector" onChange={(event) => { setCompanyId(event.target.value); void loadCompany(event.target.value); }} value={companyId}>
+            {companies.map((company) => <option key={company.id} value={company.id}>{company.name}</option>)}
+          </select>
+        ) : <span className="empty-company-note">Sign in above, then create your first company workspace.</span>}
       </div>
       {loading ? <p className="onboarding-message"><LoaderCircle size={15} /> Loading private intake...</p> : (
         <form className="onboarding-form" onSubmit={(event) => void save(event, "in_progress")}>

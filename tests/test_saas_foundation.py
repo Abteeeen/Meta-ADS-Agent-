@@ -93,3 +93,12 @@ def test_browser_code_does_not_reference_server_only_secrets() -> None:
 
     for forbidden in ("service_role", "meta_app_secret", "meta_access_token", "hubspot_access_token", "openai_api_key"):
         assert forbidden not in browser_source
+
+
+def test_public_runtime_config_exposes_only_supabase_publishable_values() -> None:
+    route = Path("web/app/api/public-config/route.ts").read_text(encoding="utf-8").lower()
+
+    assert "next_public_supabase_url" in route
+    assert "next_public_supabase_publishable_key" in route
+    assert "cache-control" in route and "no-store" in route
+    assert "service_role" not in route
