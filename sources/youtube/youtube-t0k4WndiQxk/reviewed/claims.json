@@ -1,0 +1,195 @@
+[
+  {
+    "id": "claim-t0k4WndiQxk-01",
+    "statement": "Meta Ads is presented as a single advertising ecosystem spanning Facebook, Instagram, Messenger, and Audience Network placements, rather than separate 'Facebook ads' and 'Instagram ads' products; the presenter advises against manually restricting placement early on because it tends to reduce performance.",
+    "sourceId": "youtube-t0k4WndiQxk",
+    "sourceLocation": "Video timecode 00:01:41-00:02:41 and 00:06:44-00:08:44 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [
+      "Applies to Meta's Ads Manager placement model as of the video's stated publish date (2025-10-23)."
+    ],
+    "limitations": [
+      "Presented by the creator; not independently cross-checked against current Meta placement documentation in this review."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-t0k4WndiQxk-02",
+    "statement": "The course frames all campaign and creative planning around a three-stage funnel: top of funnel (cold audiences unaware of the brand), middle of funnel (aware but not ready to buy), and bottom of funnel (high-intent people, e.g. those who added to cart or already purchased), and teaches that ad copy/creative should match the funnel stage it targets.",
+    "sourceId": "youtube-t0k4WndiQxk",
+    "sourceLocation": "Video timecode 00:09:04-00:12:46 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [
+      "Standard marketing-funnel framing applied to Meta specifically by the creator; not a Meta-defined structure."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-t0k4WndiQxk-03",
+    "statement": "The Meta Pixel (referred to interchangeably as a 'dataset' in the current Meta UI) is described as the mechanism that lets both the advertiser and Meta's algorithm observe on-site customer actions (e.g. purchases); without it, the presenter argues, the advertiser and Meta's optimization are effectively 'blind' to which ads or audiences are actually converting.",
+    "sourceId": "youtube-t0k4WndiQxk",
+    "sourceLocation": "Video timecode 00:49:03-00:55:06 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [
+      "Describes a Meta platform mechanism but has not been cross-checked against current Meta Pixel/Conversions API documentation in this review session."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-t0k4WndiQxk-04",
+    "statement": "A 'significant edit' -- changing the optimization/conversion event, adding a new ad to an ad set, or pausing an ad set for 7+ days -- is taught as resetting the ad set back into Meta's learning phase; the recommended response is to avoid unnecessary edits and leave creatives untouched once launched.",
+    "sourceId": "youtube-t0k4WndiQxk",
+    "sourceLocation": "Video timecode 06:05:01-06:06:01 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [
+      "Assumes Meta's ad-set-level learning phase behaves as described at the time of the video's publish date (2025-10-23)."
+    ],
+    "limitations": [
+      "Specific reset triggers are asserted without citing a Meta source; verify against current Meta documentation before treating as a fixed rule."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-t0k4WndiQxk-05",
+    "statement": "An ad set generally needs roughly 50 optimization events (conversions) within a week to exit Meta's learning phase; a budget too small to generate that volume keeps the ad set in a 'learning limited' state, and the taught fix is to raise the budget and/or consolidate ad sets/audiences rather than expect a specific improvement percentage.",
+    "sourceId": "youtube-t0k4WndiQxk",
+    "sourceLocation": "Video timecode 06:03:40-06:12:23 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [
+      "Specific numeric threshold (~50 events/week) is asserted without citing a Meta source."
+    ],
+    "conflictsWith": [
+      "claim-PakHu2sKTvQ-04"
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-t0k4WndiQxk-06",
+    "statement": "A personal Facebook profile must be roughly an hour old before it can be used to create or be attached to a Business Manager; the presenter frames this as a Meta anti-abuse/security measure rather than an arbitrary limit.",
+    "sourceId": "youtube-t0k4WndiQxk",
+    "sourceLocation": "Video timecode 00:34:57-00:35:57 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "LOW",
+    "conditions": [],
+    "limitations": [
+      "Specific age threshold and its rationale are not verified against current Meta Business Manager documentation; account-creation rules like this change without notice."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-t0k4WndiQxk-07",
+    "statement": "'Campaign Budget Optimization' (CBO) sets and lets Meta distribute the daily/lifetime budget across ad sets at the campaign level, while 'Ad Set Budget Optimization' (ABO, referred to in the video simply as setting budget at the ad set level) fixes a separate budget per individual ad set; the video introduces both as configuration choices without asserting one is universally superior.",
+    "sourceId": "youtube-t0k4WndiQxk",
+    "sourceLocation": "Video timecode 01:46:37-01:47:57 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-t0k4WndiQxk-08",
+    "statement": "A practical minimum starting daily budget of roughly $10 AUD per ad set (about $8 USD, adjusted by country) is suggested as a floor for a new campaign.",
+    "sourceId": "youtube-t0k4WndiQxk",
+    "sourceLocation": "Video timecode 01:47:57-01:48:18 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "LOW",
+    "conditions": [
+      "Currency- and market-dependent; the creator explicitly ties the figure to Australian dollars and notes it will differ by country."
+    ],
+    "limitations": [
+      "No account data or test shown to support the specific figure; presented as a personal rule of thumb."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-t0k4WndiQxk-09",
+    "statement": "For e-commerce specifically, a recommended structure is a single campaign with a single ad set targeting only age and gender ('broad targeting', no interest/behavior targeting) paired with a high volume of ad creatives (the video suggests scaling up toward roughly 50 concurrent ads), letting Meta's algorithm find converting audiences rather than manually narrowing them.",
+    "sourceId": "youtube-t0k4WndiQxk",
+    "sourceLocation": "Video timecode 03:33:36-03:35:17 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [
+      "Presented as working 'especially' well for e-commerce; the video does not claim the same result for lead-generation or service businesses."
+    ],
+    "limitations": [],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-t0k4WndiQxk-10",
+    "statement": "Lookalike audiences are taught as generally expensive (the video states they usually carry the highest CPMs among the targeting types it covers) and a poor fit for low-ticket e-commerce (example given: an average order value near $60), but recommended for lead generation and high-ticket e-commerce (example given: $200-300+ average order value), especially when built from a high-quality seed list such as verified converted customers.",
+    "sourceId": "youtube-t0k4WndiQxk",
+    "sourceLocation": "Video timecode 05:34:04-05:37:05 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [
+      "Conditioned on order value / offer type (low-ticket e-commerce vs. lead generation or high-ticket e-commerce) and seed-audience quality."
+    ],
+    "limitations": [],
+    "conflictsWith": [
+      "claim-PakHu2sKTvQ-06"
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-t0k4WndiQxk-11",
+    "statement": "Recommended standard campaign structures include a dedicated retargeting ad set (e.g., people who visited the website) run alongside broad and/or interest-based ad sets within the same ad-set-budget-optimized campaign, typically allocated a smaller slice of the daily budget (the video's example allocates about $10/day to retargeting versus $40/day each to broad and interest ad sets).",
+    "sourceId": "youtube-t0k4WndiQxk",
+    "sourceLocation": "Video timecode 03:39:40-03:41:20 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [],
+    "conflictsWith": [
+      "claim-PakHu2sKTvQ-07"
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-t0k4WndiQxk-12",
+    "statement": "Advertisers must declare a 'special ad category' (the video's example is credit/financial products) when applicable, and Meta will likely reject or ban ads if a required special ad category is not declared.",
+    "sourceId": "youtube-t0k4WndiQxk",
+    "sourceLocation": "Video timecode 01:53:21-01:53:41 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [
+      "Tracks Meta's real Special Ad Category policy in spirit, but the exact category list and enforcement behavior should be checked against the registered source `meta-advertising-standards` before being treated as current policy."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-t0k4WndiQxk-13",
+    "statement": "Ad creative depicting shocking or sensational content (the video's examples: graphic injury/accident imagery) or fear-mongering claims (its example: messaging like 'the economy is collapsing, invest in housing') risks being banned under Meta's ad content policies.",
+    "sourceId": "youtube-t0k4WndiQxk",
+    "sourceLocation": "Video timecode 00:30:35 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [
+      "Directionally consistent with Meta's public Advertising Standards on sensational content, but not independently checked against the current policy text in this review; see registered source `meta-advertising-standards`."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  }
+]

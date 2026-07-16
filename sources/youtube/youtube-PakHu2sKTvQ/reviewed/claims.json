@@ -1,0 +1,174 @@
+[
+  {
+    "id": "claim-PakHu2sKTvQ-01",
+    "statement": "The video's method for setting a Meta ad budget starts by establishing a 'runway' -- total investable dollars and a time window (example given: $10,000 over 3 months) -- then divides that into an implied daily budget (example given: ~$100/day) as the starting point, rather than picking a daily number first.",
+    "sourceId": "youtube-PakHu2sKTvQ",
+    "sourceLocation": "Video timecode 00:16:52-00:17:52 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-PakHu2sKTvQ-02",
+    "statement": "The video teaches deciding in advance a 'total loss investment' -- an amount of money the business can afford to lose entirely -- as the real ceiling for early ad spend, on the premise that 'investing in growth is rarely profitable on day one.'",
+    "sourceId": "youtube-PakHu2sKTvQ",
+    "sourceLocation": "Video timecode 00:18:53-00:19:54 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-PakHu2sKTvQ-03",
+    "statement": "The learning phase is framed not as a quality judgment on an ad but as Meta signaling it isn't yet confident it can deliver a stable result; results are expected to look good briefly, dip, then level off, and the stated primary goal of budget/campaign planning is to reach that leveling-off point quickly.",
+    "sourceId": "youtube-PakHu2sKTvQ",
+    "sourceLocation": "Video timecode 00:20:34-00:21:15 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-PakHu2sKTvQ-04",
+    "statement": "Each ad set may need roughly 10 to 25 results (conversion events) within a week to exit the learning phase, and the video teaches sizing the daily budget against the per-result cost so that volume is achievable in a 7-day period.",
+    "sourceId": "youtube-PakHu2sKTvQ",
+    "sourceLocation": "Video timecode 00:22:15-00:22:56 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [
+      "Numeric range differs from the ~50-events/week figure taught in youtube-t0k4WndiQxk for the same concept; neither source cites a Meta document for the number."
+    ],
+    "conflictsWith": [
+      "claim-t0k4WndiQxk-05"
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-PakHu2sKTvQ-05",
+    "statement": "The video advocates setting the budget at the campaign level (CBO) combined with broad targeting as its 'ideal campaign setup', framing ad-set-level budgeting as 'micromanaging' an algorithm the creator considers more capable than manual allocation.",
+    "sourceId": "youtube-PakHu2sKTvQ",
+    "sourceLocation": "Video timecode 00:22:56-00:27:58 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [
+      "Presented as a strong opinion/best practice rather than a neutral comparison; contrast with youtube-t0k4WndiQxk, which presents CBO and ad-set-level budgeting as a neutral choice depending on structure."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-PakHu2sKTvQ-06",
+    "statement": "The video argues against using lookalike audiences at all: it characterizes them as built from a small seed list (its example: ~100 purchasers) used to exclude 99% of a large audience, calling this 'the old way of doing things' and asserting it has been 'obsolete' since 2018, and states the presenter's team 'don't really ever need to use lookalike audiences.'",
+    "sourceId": "youtube-PakHu2sKTvQ",
+    "sourceLocation": "Video timecode 00:35:24-00:37:06 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [
+      "Directly contradicts youtube-t0k4WndiQxk, which recommends lookalikes for lead generation and high-ticket e-commerce; no account data is shown in either source to adjudicate between the two positions.",
+      "The specific claim that this approach has been 'obsolete since 2018' is asserted without evidence and is not verified against current Meta documentation."
+    ],
+    "conflictsWith": [
+      "claim-t0k4WndiQxk-10"
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-PakHu2sKTvQ-07",
+    "statement": "The video argues against building dedicated retargeting audiences, stating that most people in a retargeting pool have already decided not to buy (or never cared), that it 'creates more harm than good' to the account's broader performance over time, and asserting this approach (like lookalikes) has been 'obsolete' since 2018.",
+    "sourceId": "youtube-PakHu2sKTvQ",
+    "sourceLocation": "Video timecode 00:36:05-00:37:47 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [
+      "Directly contradicts youtube-t0k4WndiQxk, which builds a standing retargeting ad set into its recommended campaign structures; no account data is shown in either source to adjudicate between the two positions."
+    ],
+    "conflictsWith": [
+      "claim-t0k4WndiQxk-11"
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-PakHu2sKTvQ-08",
+    "statement": "Meta's interest-targeting categories are claimed to be 'over 33% inaccurate' (at least one-third of people in any interest group are said to be there 'by mistake'), on the reasoning that visiting or discussing something -- even negatively -- can place a person into an unrelated interest bucket, which the video attributes to Facebook's engineering team not having 'updated this software since 2018.'",
+    "sourceId": "youtube-PakHu2sKTvQ",
+    "sourceLocation": "Video timecode 00:34:02-00:34:43 (raw/transcript-excerpts.txt)",
+    "classification": "HYPOTHESIS",
+    "confidence": "LOW",
+    "conditions": [],
+    "limitations": [
+      "Specific '33%' figure and the '2018' claim are asserted with no source, methodology, or citation shown."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-PakHu2sKTvQ-09",
+    "statement": "The attribution-setting tradeoff is summarized as: 7-day-click plus 1-day-view gives Meta's algorithm the most optimization data, while 1-day-click gives the least data but is described as the 'highest quality' signal.",
+    "sourceId": "youtube-PakHu2sKTvQ",
+    "sourceLocation": "Video timecode 00:30:35-00:30:59 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "MEDIUM",
+    "conditions": [],
+    "limitations": [
+      "Describes Meta attribution-window mechanics but is not independently checked against current Meta Ads Manager attribution documentation in this review."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-PakHu2sKTvQ-10",
+    "statement": "The video distinguishes 'scaling efficiency' (reducing cost per action) from 'scaling budget' (spending more), offering a rule of thumb that a 10% reduction in cost per action can support a budget increase larger than 10%, because efficiency gains are described as 'stickier' than raw budget increases.",
+    "sourceId": "youtube-PakHu2sKTvQ",
+    "sourceLocation": "Video timecode 01:09:11-01:09:52 (raw/transcript-excerpts.txt)",
+    "classification": "HYPOTHESIS",
+    "confidence": "LOW",
+    "conditions": [],
+    "limitations": [
+      "Presented as a rule of thumb without supporting data or a defined method for how much larger the budget increase can safely be."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "claim-PakHu2sKTvQ-11",
+    "statement": "'Surfing' is named as a budget-scaling tactic -- raising the daily budget on days when results are good -- contrasted with an unspecified 'stable' scaling approach.",
+    "sourceId": "youtube-PakHu2sKTvQ",
+    "sourceLocation": "Video timecode 01:12:14 (raw/transcript-excerpts.txt)",
+    "classification": "COURSE_GUIDANCE",
+    "confidence": "LOW",
+    "conditions": [],
+    "limitations": [
+      "The 'stable' counter-approach is referenced but not fully defined in the reviewed transcript excerpt; revisit with a wider transcript window before treating this as a complete technique."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "claim-PakHu2sKTvQ-12",
+    "statement": "Meta's ranking/optimization systems are argued to favor ads and content that keep users on-platform longer ('retention of attention'), which the video uses to justify why heavily interrupting or narrowing delivery (e.g., manual placements, aggressive retargeting) can work against overall account performance.",
+    "sourceId": "youtube-PakHu2sKTvQ",
+    "sourceLocation": "Video timecode 00:26:58-00:27:58 (raw/transcript-excerpts.txt)",
+    "classification": "HYPOTHESIS",
+    "confidence": "LOW",
+    "conditions": [],
+    "limitations": [
+      "Presented as the creator's interpretation of why Meta's algorithm behaves the way it does, not a cited Meta statement about ranking objectives."
+    ],
+    "reviewedAt": "2026-07-16",
+    "status": "ACTIVE"
+  }
+]

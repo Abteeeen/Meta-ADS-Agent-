@@ -6,9 +6,9 @@
     "url": "https://youtu.be/t0k4WndiQxk",
     "sourceType": "VIDEO_COURSE",
     "publishedAt": "2025-10-23",
-    "extractedAt": "2026-07-15",
-    "status": "REGISTERED",
-    "notes": "Course guidance only. Extract claims with timecodes and classify individually."
+    "extractedAt": "2026-07-16",
+    "status": "REVIEWED",
+    "notes": "Course guidance only. Extract claims with timecodes and classify individually. Reviewed claims: sources/youtube/youtube-t0k4WndiQxk/reviewed/claims.json (extracted from a human-supplied caption transcript; several claims flagged NEEDS_REVIEW pending official Meta documentation checks)."
   },
   {
     "id": "youtube-BiRlATLFEww",
@@ -17,9 +17,9 @@
     "url": "https://youtu.be/BiRlATLFEww",
     "sourceType": "VIDEO_COURSE",
     "publishedAt": "2026-05-31",
-    "extractedAt": "2026-07-15",
-    "status": "REGISTERED",
-    "notes": "Course guidance only. Separate general principles from account-specific claims."
+    "extractedAt": "2026-07-16",
+    "status": "REVIEWED",
+    "notes": "Course guidance only. Separate general principles from account-specific claims. Reviewed claims: sources/youtube/youtube-BiRlATLFEww/reviewed/claims.json (extracted from a human-supplied caption transcript; several claims flagged NEEDS_REVIEW pending official Meta documentation checks)."
   },
   {
     "id": "youtube-PakHu2sKTvQ",
@@ -28,9 +28,9 @@
     "url": "https://youtu.be/PakHu2sKTvQ",
     "sourceType": "VIDEO_COURSE",
     "publishedAt": "2024-10-22",
-    "extractedAt": "2026-07-15",
-    "status": "REGISTERED",
-    "notes": "Review UI and settings guidance for freshness before reuse."
+    "extractedAt": "2026-07-16",
+    "status": "REVIEWED",
+    "notes": "Review UI and settings guidance for freshness before reuse. Reviewed claims: sources/youtube/youtube-PakHu2sKTvQ/reviewed/claims.json (extracted from a human-supplied caption transcript; several claims flagged NEEDS_REVIEW pending official Meta documentation checks; conflicts with youtube-t0k4WndiQxk on lookalike/retargeting audiences)."
   },
   {
     "id": "meta-marketing-api",
