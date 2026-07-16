@@ -23,3 +23,11 @@ The strategy stage consumes reviewed claims without upgrading course guidance in
 ```bash
 python -m agent strategy --input examples/business-brief.example.json --claims-dir sources/youtube
 ```
+
+## Launch QA
+
+Launch QA evaluates tracking, creative readiness, and a human policy review. A clean audit is only ready for a human approval decision; it does not publish ads.
+
+```bash
+python -m agent launch-qa --input examples/business-brief.example.json --strategy strategy.json --checklist examples/launch-checklist.example.json
+```

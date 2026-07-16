@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meta-ads-agent.local/schemas/launch-qa.schema.json",
+  "title": "Launch Quality Assurance Result",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["mode", "launchStatus", "findings", "recommendedAction", "doNotChangeYet"],
+  "properties": {
+    "mode": { "const": "AUDITOR" },
+    "launchStatus": { "enum": ["BLOCKED", "READY_FOR_HUMAN_APPROVAL"] },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "severity", "recommendation", "missingData"],
+        "properties": {
+          "id": { "type": "string" },
+          "severity": { "const": "BLOCKER" },
+          "recommendation": { "type": "string" },
+          "missingData": { "type": "string" }
+        }
+      }
+    },
+    "recommendedAction": { "type": "string" },
+    "doNotChangeYet": { "type": "array", "minItems": 1 }
+  }
+}
