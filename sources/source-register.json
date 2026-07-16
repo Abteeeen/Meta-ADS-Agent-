@@ -51,5 +51,35 @@
     "extractedAt": "2026-07-15",
     "status": "REGISTERED",
     "notes": "Primary policy source; final enforcement remains Meta's decision."
+  },
+  {
+    "id": "five-star-course-page",
+    "title": "Certificate II in Security Operations (CPP20218)",
+    "publisher": "Five Star Training Academy",
+    "url": "https://fivestartraining.edu.au/courses/certificate-ii-in-security-operations/",
+    "sourceType": "COMPANY_WEBSITE",
+    "extractedAt": "2026-07-16",
+    "status": "REVIEWED",
+    "notes": "Public offer, location, price, and course-claim context only. Price, funding, availability, and outcome claims require client confirmation before ads use them."
+  },
+  {
+    "id": "five-star-training-calendar",
+    "title": "2026 Training Calendar",
+    "publisher": "Five Star Training Academy",
+    "url": "https://fivestartrainingacademy.jotform.com/app/261661011297958",
+    "sourceType": "COMPANY_WEBSITE",
+    "extractedAt": "2026-07-16",
+    "status": "REVIEWED",
+    "notes": "A public embedded calendar. It supports location/date research but does not reliably expose live seats or enrolment availability."
+  },
+  {
+    "id": "qld-unarmed-security-licence",
+    "title": "Apply for an unarmed security officer licence",
+    "publisher": "Queensland Government",
+    "url": "https://www.qld.gov.au/community/fair-trading/regulated-industries-licensing-and-legislation/security-industry-regulation/working-as-an-unarmed-security-officer/apply",
+    "sourceType": "OFFICIAL_DOCUMENTATION",
+    "extractedAt": "2026-07-16",
+    "status": "REVIEWED",
+    "notes": "Primary source for current Queensland licence requirements. Use to review training and licence claims before publishing ads."
   }
 ]
