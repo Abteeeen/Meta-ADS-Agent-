@@ -112,3 +112,15 @@ def test_company_insert_returning_uses_the_row_organization_for_read_access() ->
     assert "membership.company_id = target_company_id" in sql
     assert "security invoker" in sql
     assert "using ((select public.can_read_company_row(id, organization_id)))" in sql
+
+
+def test_client_growth_review_is_generic_with_a_five_star_seed() -> None:
+    review_data = Path("web/app/client-growth-review-data.ts").read_text(encoding="utf-8")
+    review_panel = Path("web/app/client-growth-review-panel.tsx").read_text(encoding="utf-8")
+
+    assert "export function buildGrowthReview" in review_data
+    assert "export const fiveStarGrowthReview" in review_data
+    assert "primaryLocations.map" in review_data
+    assert "Client validation required" in review_panel
+    assert "Not connected to Meta" in review_panel
+    assert "No publishing, budget or audience change without named approval" in review_data

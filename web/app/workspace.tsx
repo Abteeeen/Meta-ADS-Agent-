@@ -25,6 +25,7 @@ import { CompanyOnboardingPanel } from "./company-onboarding-panel";
 import { ApprovalCenterPanel } from "./approval-center-panel";
 import { TeamAccessPanel } from "./team-access-panel";
 import { configureSupabaseBrowserClient } from "./supabase-browser";
+import { ClientGrowthReviewPanel } from "./client-growth-review-panel";
 
 const steps = [
   { id: "brief", label: "Business brief", detail: "Core offer and conversion goal", state: "complete" },
@@ -135,6 +136,7 @@ export function AgencyWorkspace() {
               <WorkspaceConnection onCompanyReady={setCompanyName} />
               <TeamAccessPanel />
               <CompanyOnboardingPanel />
+              <ClientGrowthReviewPanel />
               <CompanyIntelligencePanel />
               <ApprovalCenterPanel />
             </>
