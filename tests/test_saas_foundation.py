@@ -102,3 +102,13 @@ def test_public_runtime_config_exposes_only_supabase_publishable_values() -> Non
     assert "next_public_supabase_publishable_key" in route
     assert "cache-control" in route and "no-store" in route
     assert "service_role" not in route
+
+
+def test_company_insert_returning_uses_the_row_organization_for_read_access() -> None:
+    sql = (MIGRATIONS / "0010_company_returning_access.sql").read_text(encoding="utf-8").lower()
+
+    assert "create or replace function private.can_read_company_row" in sql
+    assert "membership.organization_id = target_organization_id" in sql
+    assert "membership.company_id = target_company_id" in sql
+    assert "security invoker" in sql
+    assert "using ((select public.can_read_company_row(id, organization_id)))" in sql
