@@ -14,4 +14,12 @@ python -m agent workflow --input examples/business-brief.example.json
 
 ## Current boundary
 
-This first vertical slice is deterministic orchestration. It tells an operator what can safely happen next. The next increment will use reviewed research to produce an evidence-led strategy brief through the response contract, then add launch-QA and diagnostic outputs.
+The first stage is deterministic orchestration. It tells an operator what can safely happen next. The implemented second stage uses reviewed research to produce an evidence-led strategy brief through the response contract. The next core stages are launch QA, performance diagnosis, and experiment planning.
+
+## Strategy brief
+
+The strategy stage consumes reviewed claims without upgrading course guidance into platform fact. Claims marked `NEEDS_REVIEW` can inform a strategy brief, but lower its inference confidence.
+
+```bash
+python -m agent strategy --input examples/business-brief.example.json --claims-dir sources/youtube
+```

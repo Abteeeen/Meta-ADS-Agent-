@@ -76,3 +76,50 @@ def test_load_json_explains_invalid_json(tmp_path) -> None:
 
     with pytest.raises(SystemExit, match="Input file is not valid JSON"):
         _load_json(brief_path)
+
+
+def test_main_builds_a_strategy_brief_from_reviewed_claims(tmp_path, monkeypatch, capsys) -> None:
+    brief_path = tmp_path / "brief.json"
+    claims_path = tmp_path / "source" / "reviewed"
+    claims_path.mkdir(parents=True)
+    brief_path.write_text(
+        json.dumps(
+            {
+                "businessModel": "ECOMMERCE",
+                "market": "United States",
+                "offer": "Starter skincare kit",
+                "primaryGoal": "SALES",
+                "conversionEvent": "Purchase",
+                "landingDestination": "https://example.com/product",
+                "monthlyBudget": 5000,
+                "accountMaturity": "NEW_ACCOUNT",
+                "trackingStatus": "VERIFIED",
+            }
+        ),
+        encoding="utf-8",
+    )
+    (claims_path / "claims.json").write_text(
+        json.dumps(
+            [
+                {
+                    "id": "campaign-guidance",
+                    "statement": "Use a campaign structure that matches the conversion goal.",
+                    "sourceId": "course-source",
+                    "classification": "COURSE_GUIDANCE",
+                    "status": "ACTIVE",
+                }
+            ]
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["agent", "strategy", "--input", str(brief_path), "--claims-dir", str(tmp_path)],
+    )
+
+    assert main() == 0
+
+    output = json.loads(capsys.readouterr().out)
+    assert output["mode"] == "STRATEGIST"
+    assert output["evidence"][0]["sourceId"] == "course-source"
