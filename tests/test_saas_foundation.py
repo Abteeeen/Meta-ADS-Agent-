@@ -70,6 +70,21 @@ def test_client_members_can_read_only_their_company_and_profile_without_agency_m
     assert "agency operators can create companies" in sql
 
 
+def test_company_invites_store_only_a_hash_and_require_the_invited_identity() -> None:
+    sql = (MIGRATIONS / "0009_company_invitation_flow.sql").read_text(encoding="utf-8").lower()
+
+    assert "gen_random_bytes(32)" in sql
+    assert "digest(raw_token, 'sha256')" in sql
+    assert "from auth.users" in sql
+    assert "signed_in_email <> invitation.email" in sql
+    assert "security invoker" in sql
+    assert "grant execute on function public.accept_company_invitation(text) to authenticated" in sql
+    assert "create or replace function private.list_company_access" in sql
+    assert "not private.can_operate_company(target_company_id)" in sql
+    assert "join auth.users agency_user" in sql
+    assert "join auth.users client_user" in sql
+
+
 def test_browser_code_does_not_reference_server_only_secrets() -> None:
     browser_source = "\n".join(
         path.read_text(encoding="utf-8").lower()
