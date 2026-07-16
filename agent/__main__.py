@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from agent.diagnostics import diagnose_performance
 from agent.launch_qa import build_launch_qa
 from agent.strategy import build_strategy_brief, load_claims
 from agent.workflow import build_workflow_plan
@@ -26,15 +27,25 @@ def main() -> int:
     qa_parser.add_argument("--input", required=True, type=Path, help="Business brief JSON file.")
     qa_parser.add_argument("--strategy", required=True, type=Path, help="Strategy brief JSON file.")
     qa_parser.add_argument("--checklist", required=True, type=Path, help="Launch checklist JSON file.")
+    diagnostic_parser = subparsers.add_parser("diagnose", help="Compare performance periods and plan one experiment.")
+    diagnostic_parser.add_argument("--current", required=True, type=Path, help="Current-period metrics JSON file.")
+    diagnostic_parser.add_argument("--baseline", required=True, type=Path, help="Baseline-period metrics JSON file.")
+    diagnostic_parser.add_argument("--strategy", required=True, type=Path, help="Strategy brief JSON file with evidence.")
     args = parser.parse_args()
 
-    brief = _load_json(args.input)
     if args.command == "workflow":
-        output = build_workflow_plan(brief)
+        output = build_workflow_plan(_load_json(args.input))
     elif args.command == "strategy":
-        output = build_strategy_brief(brief, load_claims(args.claims_dir))
+        output = build_strategy_brief(_load_json(args.input), load_claims(args.claims_dir))
+    elif args.command == "launch-qa":
+        output = build_launch_qa(
+            _load_json(args.input), _load_json(args.strategy), _load_json(args.checklist)
+        )
     else:
-        output = build_launch_qa(brief, _load_json(args.strategy), _load_json(args.checklist))
+        strategy = _load_json(args.strategy)
+        output = diagnose_performance(
+            _load_json(args.current), _load_json(args.baseline), strategy.get("evidence", [])
+        )
     print(json.dumps(output, indent=2))
     return 0
 
