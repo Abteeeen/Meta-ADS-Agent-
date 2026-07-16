@@ -40,3 +40,12 @@ examples/    Safe, synthetic example inputs and outputs (created in Phase 2)
 Codex owns the technical contracts, product architecture, implementation, and evaluations. Claude owns structured research extraction, learning material, copy/creative ideation, and agency playbooks. Both agents must use the source policy and keep their work small, reviewable, and linked to a source or decision record.
 
 See [the full allocation](docs/WORK_ALLOCATION.md).
+
+## Engineering checks
+
+Install development dependencies and run the safety suite with:
+
+```bash
+python -m pip install -e ".[dev]"
+python -m pytest
+```

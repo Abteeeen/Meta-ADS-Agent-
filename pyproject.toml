@@ -1,0 +1,17 @@
+[project]
+name = "meta-ads-agent"
+version = "0.1.0"
+description = "Evidence-led contracts for a Meta Ads AI operating system."
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = ["pytest>=9.0", "pytest-cov>=7.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = ["--strict-markers", "--cov=agent", "--cov-report=term-missing"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
