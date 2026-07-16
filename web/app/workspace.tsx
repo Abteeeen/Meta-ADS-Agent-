@@ -22,6 +22,7 @@ import { useState } from "react";
 import { WorkspaceConnection } from "./workspace-connection";
 import { CompanyIntelligencePanel } from "./company-intelligence-panel";
 import { CompanyOnboardingPanel } from "./company-onboarding-panel";
+import { ApprovalCenterPanel } from "./approval-center-panel";
 
 const steps = [
   { id: "brief", label: "Business brief", detail: "Core offer and conversion goal", state: "complete" },
@@ -113,6 +114,7 @@ export function AgencyWorkspace() {
           <WorkspaceConnection onCompanyReady={setCompanyName} />
           <CompanyOnboardingPanel />
           <CompanyIntelligencePanel />
+          <ApprovalCenterPanel />
 
           <section className="signal-strip" aria-label="Workspace status">
             <div>
