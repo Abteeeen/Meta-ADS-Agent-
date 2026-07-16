@@ -1,0 +1,16 @@
+{
+  "companyName": "Five Star Training Academy",
+  "accountMaturity": "EXISTING_ACCOUNT",
+  "knownFacts": {
+    "offer": "CPP20218 Certificate II in Security Operations",
+    "market": "Brisbane and Gold Coast, Queensland",
+    "landingDestination": "https://fivestartraining.edu.au/",
+    "primaryGoal": "Eligible leads and paid students",
+    "conversionEvent": "Qualified enrolment lead",
+    "trackingStatus": "unknown"
+  },
+  "connections": {
+    "meta": "NOT_CONNECTED",
+    "crm": "NOT_CONNECTED"
+  }
+}
