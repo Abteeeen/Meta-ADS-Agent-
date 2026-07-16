@@ -6,12 +6,9 @@ import json
 from pathlib import Path
 from typing import Any
 
+from agent.retrieval import select_relevant_claims
 from agent.response_contract import validate_response
 from agent.workflow import build_workflow_plan
-
-
-USABLE_STATUSES = {"ACTIVE", "NEEDS_REVIEW"}
-USABLE_CLASSIFICATIONS = {"PLATFORM_FACT", "COURSE_GUIDANCE", "AGENCY_RULE", "CASE_STUDY"}
 
 
 class StrategyBuildError(ValueError):
@@ -40,7 +37,7 @@ def build_strategy_brief(brief: dict[str, Any], claims: list[dict[str, Any]]) ->
     if workflow["overallStatus"] != "READY_FOR_STRATEGY":
         raise StrategyBuildError("Cannot build strategy: missing business inputs.")
 
-    evidence = _select_evidence(claims)
+    evidence = _select_evidence(claims, brief)
     if not evidence:
         raise StrategyBuildError("Cannot build strategy: no usable reviewed evidence is available.")
 
@@ -96,19 +93,14 @@ def build_strategy_brief(brief: dict[str, Any], claims: list[dict[str, Any]]) ->
     return response
 
 
-def _select_evidence(claims: list[dict[str, Any]], maximum: int = 3) -> list[dict[str, Any]]:
-    selected = []
-    for claim in claims:
-        if claim.get("status") not in USABLE_STATUSES:
-            continue
-        if claim.get("classification") not in USABLE_CLASSIFICATIONS:
-            continue
-        if not all(claim.get(field) for field in ("sourceId", "classification", "statement")):
-            continue
-        selected.append(claim)
-        if len(selected) == maximum:
-            break
-    return selected
+def _select_evidence(claims: list[dict[str, Any]], brief: dict[str, Any]) -> list[dict[str, Any]]:
+    return select_relevant_claims(
+        claims,
+        " ".join(
+            str(brief[field])
+            for field in ("businessModel", "primaryGoal", "conversionEvent", "offer", "market")
+        ),
+    )
 
 
 def _evidence_record(claim: dict[str, Any]) -> dict[str, str]:

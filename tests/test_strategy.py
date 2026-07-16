@@ -63,6 +63,19 @@ def test_needs_review_evidence_lowers_inference_confidence() -> None:
     assert brief["inferences"][0]["confidence"] == "LOW"
 
 
+def test_strategy_prefers_evidence_relevant_to_the_brief() -> None:
+    unrelated_claim = reviewed_claim()
+    unrelated_claim["id"] = "ecommerce-guidance"
+    unrelated_claim["statement"] = "Use broad targeting for ecommerce purchases."
+    relevant_claim = reviewed_claim()
+    relevant_claim["id"] = "lead-guidance"
+    relevant_claim["statement"] = "For lead generation, qualify leads against the sales outcome."
+
+    brief = build_strategy_brief(complete_brief(), [unrelated_claim, relevant_claim])
+
+    assert brief["evidence"][0]["supports"] == relevant_claim["statement"]
+
+
 def test_load_claims_reads_all_reviewed_claim_files(tmp_path) -> None:
     first = tmp_path / "one" / "reviewed"
     second = tmp_path / "two" / "reviewed"
