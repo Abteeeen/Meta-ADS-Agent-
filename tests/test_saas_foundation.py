@@ -23,6 +23,9 @@ PUBLIC_TABLES = (
     "intelligence_artifacts",
     "evidence_gaps",
     "approval_requests",
+    "company_members",
+    "company_invitations",
+    "company_onboarding",
 )
 
 
@@ -41,6 +44,30 @@ def test_privileged_helpers_are_not_defined_as_public_security_definer_functions
     assert "create or replace function public.bootstrap_organization" in helpers
     public_function = helpers.split("create or replace function public.bootstrap_organization", maxsplit=1)[1]
     assert "security invoker" in public_function.split("create or replace function public.is_company_member", maxsplit=1)[0]
+
+
+def test_client_membership_is_company_scoped_and_uses_the_existing_private_helpers() -> None:
+    sql = (MIGRATIONS / "0007_client_workspace_onboarding.sql").read_text(encoding="utf-8").lower()
+
+    assert "create table public.company_members" in sql
+    assert "role in ('client_admin', 'client_viewer')" in sql
+    assert "create table public.company_invitations" in sql
+    assert "invite_token_hash" in sql
+    assert "create table public.company_onboarding" in sql
+    assert "create or replace function private.is_company_member" in sql
+    assert "create or replace function private.can_operate_company" in sql
+    assert "for all to authenticated" in sql
+
+
+def test_client_members_can_read_only_their_company_and_profile_without_agency_membership() -> None:
+    sql = (MIGRATIONS / "0008_company_member_access.sql").read_text(encoding="utf-8").lower()
+
+    assert "drop policy \"members can read companies in their organization\"" in sql
+    assert "drop policy \"owners and operators can create companies\"" in sql
+    assert "company members can read their company" in sql
+    assert "company members can read their profile" in sql
+    assert "public.is_company_member" in sql
+    assert "agency operators can create companies" in sql
 
 
 def test_browser_code_does_not_reference_server_only_secrets() -> None:
