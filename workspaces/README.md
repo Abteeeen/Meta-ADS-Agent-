@@ -21,14 +21,19 @@ Use a private repository only when the business explicitly approves collaboratio
 ```text
 workspaces/<company-slug>/
   workspace.json
+  first-30-days.md
+  client-intake.md
   business-profile.md
   offer-and-positioning.md
   customer-research.md
+  creative-research.md
   measurement-plan.md
   campaign-brief.md
   creative-brief.md
+  launch-qa.md
   decision-log.md
   weekly-review.md
+  reporting-note.md
   audits/
   experiments/
   creative-library/
