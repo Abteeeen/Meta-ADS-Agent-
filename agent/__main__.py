@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from agent.launch_qa import build_launch_qa
 from agent.strategy import build_strategy_brief, load_claims
 from agent.workflow import build_workflow_plan
 
@@ -21,13 +22,19 @@ def main() -> int:
     strategy_parser.add_argument(
         "--claims-dir", required=True, type=Path, help="Directory containing source reviewed/claims.json files."
     )
+    qa_parser = subparsers.add_parser("launch-qa", help="Audit pre-launch readiness.")
+    qa_parser.add_argument("--input", required=True, type=Path, help="Business brief JSON file.")
+    qa_parser.add_argument("--strategy", required=True, type=Path, help="Strategy brief JSON file.")
+    qa_parser.add_argument("--checklist", required=True, type=Path, help="Launch checklist JSON file.")
     args = parser.parse_args()
 
     brief = _load_json(args.input)
     if args.command == "workflow":
         output = build_workflow_plan(brief)
-    else:
+    elif args.command == "strategy":
         output = build_strategy_brief(brief, load_claims(args.claims_dir))
+    else:
+        output = build_launch_qa(brief, _load_json(args.strategy), _load_json(args.checklist))
     print(json.dumps(output, indent=2))
     return 0
 
