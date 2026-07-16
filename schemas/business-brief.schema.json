@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meta-ads-agent.local/schemas/business-brief.schema.json",
+  "title": "Meta Ads Business Brief",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["businessModel", "market", "offer", "primaryGoal", "conversionEvent", "landingDestination", "monthlyBudget", "accountMaturity", "trackingStatus"],
+  "properties": {
+    "businessModel": { "type": "string", "minLength": 1 },
+    "market": { "type": "string", "minLength": 1 },
+    "offer": { "type": "string", "minLength": 1 },
+    "primaryGoal": { "type": "string", "minLength": 1 },
+    "conversionEvent": { "type": "string", "minLength": 1 },
+    "landingDestination": { "type": "string", "format": "uri" },
+    "monthlyBudget": { "type": "number", "exclusiveMinimum": 0 },
+    "accountMaturity": { "enum": ["NEW_ACCOUNT", "EXISTING_ACCOUNT"] },
+    "trackingStatus": { "enum": ["VERIFIED", "UNVERIFIED", "UNKNOWN"] }
+  }
+}
