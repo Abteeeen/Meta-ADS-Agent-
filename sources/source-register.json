@@ -39,8 +39,8 @@
     "url": "https://developers.facebook.com/docs/marketing-api/",
     "sourceType": "OFFICIAL_DOCUMENTATION",
     "extractedAt": "2026-07-15",
-    "status": "REGISTERED",
-    "notes": "Primary source for API behavior; validate freshness at implementation time."
+    "status": "REVIEWED",
+    "notes": "Primary source for API behavior. The first client integration remains read-only; validate API version and available fields at implementation time."
   },
   {
     "id": "meta-advertising-standards",
@@ -131,5 +131,25 @@
     "extractedAt": "2026-07-16",
     "status": "REVIEWED",
     "notes": "Australian privacy, consent, SMS, and telemarketing guidance for lead follow-up. Obtain legal/compliance advice for the client's implementation."
+  },
+  {
+    "id": "meta-ad-review-process",
+    "title": "Advertising review process",
+    "publisher": "Meta",
+    "url": "https://www.facebook.com/business/ads/review-policy-guidelines",
+    "sourceType": "OFFICIAL_POLICY",
+    "extractedAt": "2026-07-16",
+    "status": "REVIEWED",
+    "notes": "Meta review covers the ad, targeting, and destination. Approval is Meta's decision and ads may be reviewed again after delivery begins."
+  },
+  {
+    "id": "accc-advertising-claims",
+    "title": "False or misleading claims",
+    "publisher": "Australian Competition and Consumer Commission",
+    "url": "https://www.accc.gov.au/business/advertising-and-promotions/false-or-misleading-claims",
+    "sourceType": "OFFICIAL_POLICY",
+    "extractedAt": "2026-07-16",
+    "status": "REVIEWED",
+    "notes": "Primary Australian guidance for substantiating advertising claims and avoiding misleading conduct."
   }
 ]
