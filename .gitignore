@@ -10,3 +10,7 @@ coverage/
 __pycache__/
 .pytest_cache/
 *.pyc
+workspaces/*
+!workspaces/README.md
+!workspaces/_template/
+!workspaces/_template/**
