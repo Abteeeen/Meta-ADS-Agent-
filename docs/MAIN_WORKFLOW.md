@@ -31,3 +31,15 @@ Launch QA evaluates tracking, creative readiness, and a human policy review. A c
 ```bash
 python -m agent launch-qa --input examples/business-brief.example.json --strategy strategy.json --checklist examples/launch-checklist.example.json
 ```
+
+## Performance diagnosis
+
+The diagnosis stage compares a supplied current period with a supplied baseline. It calculates CPM, CTR, CPC, conversion rate, and CPA transparently, then proposes one controlled experiment. It does not use generic performance benchmarks as if they were account truth.
+
+```bash
+python -m agent diagnose --current examples/current-period.example.json --baseline examples/baseline-period.example.json --strategy strategy.json
+```
+
+## Pipeline orchestration
+
+`agent.pipeline.run_pipeline` composes the complete generic workflow: readiness, strategy, launch QA, and optional diagnosis. It has no Meta write capability. A blocked business brief stops downstream stages rather than producing fabricated advice.
