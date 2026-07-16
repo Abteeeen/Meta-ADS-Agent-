@@ -124,3 +124,15 @@ def test_client_growth_review_is_generic_with_a_five_star_seed() -> None:
     assert "Client validation required" in review_panel
     assert "Not connected to Meta" in review_panel
     assert "No publishing, budget or audience change without named approval" in review_data
+
+
+def test_client_growth_review_supports_a_local_service_booking_model() -> None:
+    review_data = Path("web/app/client-growth-review-data.ts").read_text(encoding="utf-8")
+    review_panel = Path("web/app/client-growth-review-panel.tsx").read_text(encoding="utf-8")
+
+    assert "export const ecoCleanGrowthReview" in review_data
+    assert "qualified WhatsApp enquiries and booked service jobs" in review_data
+    assert "Approved click-to-WhatsApp or call route" in review_data
+    assert "vehicle plates blurred" in review_data
+    assert "demoGrowthReviews" in review_panel
+    assert "Choose client growth review" in review_panel

@@ -3,7 +3,7 @@
 import { ArrowRight, BadgeCheck, BarChart3, CheckCircle2, CircleAlert, ClipboardCheck, FileCheck2, FileSearch, MessageCircle, MousePointerClick, ShieldCheck, Sparkles, Target, UsersRound } from "lucide-react";
 import { useState } from "react";
 
-import { fiveStarGrowthReview } from "./client-growth-review-data";
+import { demoGrowthReviews } from "./client-growth-review-data";
 
 type ReviewView = "review" | "drafts" | "qualification" | "handoff";
 
@@ -16,7 +16,8 @@ const views: Array<{ id: ReviewView; label: string; icon: typeof FileSearch }> =
 
 export function ClientGrowthReviewPanel() {
   const [view, setView] = useState<ReviewView>("review");
-  const review = fiveStarGrowthReview;
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const review = demoGrowthReviews[reviewIndex];
 
   return (
     <section className="growth-review-panel" aria-labelledby="growth-review-title">
@@ -26,6 +27,7 @@ export function ClientGrowthReviewPanel() {
           <p className="eyebrow">Client growth review</p>
           <h2 id="growth-review-title">{review.companyName}</h2>
         </div>
+        <label className="review-company-select">Demo company<select aria-label="Choose client growth review" onChange={(event) => { setReviewIndex(Number(event.target.value)); setView("review"); }} value={reviewIndex}>{demoGrowthReviews.map((item, index) => <option key={item.companyName} value={index}>{item.companyName}</option>)}</select></label>
         <span className="review-status"><CircleAlert size={14} /> Client validation required</span>
       </div>
       <p className="growth-review-lede">{review.headline} This is the first reviewable operator pack: it separates known facts, working hypotheses and client decisions before any Meta account action.</p>
@@ -53,7 +55,7 @@ export function ClientGrowthReviewPanel() {
       </div>}
 
       {view === "drafts" && <div className="review-view" role="tabpanel">
-        <div className="review-section-heading"><div><p className="eyebrow">No-spend draft pack</p><h3>Two location-specific campaign proposals</h3></div><span>Not connected to Meta</span></div>
+        <div className="review-section-heading"><div><p className="eyebrow">No-spend draft pack</p><h3>Location-specific campaign proposals</h3></div><span>Not connected to Meta</span></div>
         <div className="campaign-draft-list">
           {review.campaigns.map((campaign) => <article key={campaign.name}><div className="campaign-draft-top"><div><Target size={18} /><strong>{campaign.name}</strong></div><span>{campaign.status}</span></div><dl><div><dt>Objective</dt><dd>{campaign.objective}</dd></div><div><dt>Location</dt><dd>{campaign.location}</dd></div><div><dt>Lead route</dt><dd>{campaign.route}</dd></div></dl><p><ShieldCheck size={15} /> {campaign.guardrail}</p></article>)}
         </div>
@@ -63,7 +65,7 @@ export function ClientGrowthReviewPanel() {
       {view === "qualification" && <div className="review-view" role="tabpanel">
         <div className="review-section-heading"><div><p className="eyebrow">Lead-quality flow</p><h3>Qualify with context, then hand off fast</h3></div><span>Approval required before use</span></div>
         <div className="qualification-flow">
-          <article><MousePointerClick size={20} /><strong>Ad or landing route</strong><p>Show course, location and realistic next step.</p></article><ArrowRight size={17} aria-hidden="true" /><article><MessageCircle size={20} /><strong>Approved questions</strong><p>Ask only the minimum questions that clarify fit.</p></article><ArrowRight size={17} aria-hidden="true" /><article><UsersRound size={20} /><strong>Human follow-up</strong><p>Phone/SMS ownership and timing recorded in HubSpot.</p></article>
+          <article><MousePointerClick size={20} /><strong>Ad or landing route</strong><p>{review.qualificationIntro}</p></article><ArrowRight size={17} aria-hidden="true" /><article><MessageCircle size={20} /><strong>Approved questions</strong><p>Ask only the minimum questions that clarify fit.</p></article><ArrowRight size={17} aria-hidden="true" /><article><UsersRound size={20} /><strong>Human follow-up</strong><p>Contact ownership and timing recorded in {review.crm}.</p></article>
         </div>
         <ol className="review-question-list">{review.questions.map((question) => <li key={question}>{question}</li>)}</ol>
         <p className="review-warning"><CircleAlert size={16} /> Do not ask for criminal-history, licence, identity or other sensitive eligibility data in Meta forms or messaging. The client must approve final wording and privacy handling.</p>
@@ -72,10 +74,10 @@ export function ClientGrowthReviewPanel() {
       {view === "handoff" && <div className="review-view" role="tabpanel">
         <div className="review-section-heading"><div><p className="eyebrow">Agency engagement path</p><h3>What changes after the client approves</h3></div><span>Human-controlled</span></div>
         <div className="operator-path">
-          <article><span>01</span><strong>Validate this review</strong><p>Five Star confirms claims, dates, capacity, budget, follow-up ownership and the definition of an eligible lead.</p></article>
+          <article><span>01</span><strong>Validate this review</strong><p>{review.companyName} confirms claims, capacity, budget, follow-up ownership and the definition of a qualified lead.</p></article>
           <article><span>02</span><strong>Authorise read-only connections</strong><p>Meta and HubSpot are connected with minimum access so the account auditor can establish the real baseline.</p></article>
           <article><span>03</span><strong>Approve draft pack</strong><p>The agency reviews the campaign, creative, qualification flow, locations and measurement plan with named owners.</p></article>
-          <article><span>04</span><strong>Launch and learn</strong><p>A human publishes the approved build. Weekly reporting compares lead quality and paid outcomes before one controlled optimisation.</p></article>
+          <article><span>04</span><strong>Launch and learn</strong><p>A human publishes the approved build. Weekly reporting compares lead quality and {review.salesOutcome} before one controlled optimisation.</p></article>
         </div>
         <div className="review-proof-list"><h3>Evidence still needed before launch</h3>{review.proofNeeded.map((item) => <p key={item}><CircleAlert size={15} /> {item}</p>)}</div>
       </div>}
