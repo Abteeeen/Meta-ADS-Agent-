@@ -1,5 +1,5 @@
-import { FiveStarPresentation } from "./five-star-presentation";
+import { AgencyWorkspace } from "./workspace";
 
 export default function Home() {
-  return <FiveStarPresentation />;
+  return <AgencyWorkspace />;
 }
