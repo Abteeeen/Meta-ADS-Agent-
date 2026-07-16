@@ -22,7 +22,7 @@ operations/  Checklists and repeatable account workflows (created in Phase 2)
 decisions/   Diagnostic and decision rules (created in Phase 3)
 prompts/     Agent instructions and response contracts (created in Phase 3)
 schemas/     JSON Schema contracts for structured outputs and records
-agent/       Application and integration code (created in Phase 3)
+agent/       Application and integration code, including the company-intelligence planner
 evals/       Evaluation cases and rubrics (created in Phase 3)
 examples/    Safe, synthetic example inputs and outputs (created in Phase 2)
 ```
@@ -48,4 +48,14 @@ Install development dependencies and run the safety suite with:
 ```bash
 python -m pip install -e ".[dev]"
 python -m pytest
+```
+
+## First company run
+
+Use the Company Intelligence Run to route the discovery work for a new client.
+It separates public research, client-owned commercial facts, and data that needs
+an approved read-only connection. See [the company-intelligence guide](docs/COMPANY_INTELLIGENCE.md).
+
+```bash
+python -m agent company-intelligence --input examples/company-context.example.json
 ```

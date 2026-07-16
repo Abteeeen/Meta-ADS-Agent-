@@ -125,6 +125,40 @@ def test_main_builds_a_strategy_brief_from_reviewed_claims(tmp_path, monkeypatch
     assert output["evidence"][0]["sourceId"] == "course-source"
 
 
+def test_main_routes_company_intelligence_work(tmp_path, monkeypatch, capsys) -> None:
+    context_path = tmp_path / "company-context.json"
+    context_path.write_text(
+        json.dumps(
+            {
+                "companyName": "Five Star Training Academy",
+                "accountMaturity": "EXISTING_ACCOUNT",
+                "knownFacts": {
+                    "offer": "CPP20218 Security Operations",
+                    "market": "Brisbane and Gold Coast",
+                    "landingDestination": "https://fivestartraining.edu.au/",
+                    "primaryGoal": "Eligible leads and paid students",
+                    "conversionEvent": "Eligible lead",
+                    "trackingStatus": "unknown",
+                },
+                "connections": {"meta": "NOT_CONNECTED", "crm": "NOT_CONNECTED"},
+            }
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["agent", "company-intelligence", "--input", str(context_path)],
+    )
+
+    assert main() == 0
+
+    output = json.loads(capsys.readouterr().out)
+    assert output["mode"] == "COMPANY_INTELLIGENCE"
+    assert output["companyName"] == "Five Star Training Academy"
+    assert output["strategySynthesis"]["status"] == "WAITING_FOR_CLIENT_INPUT"
+
+
 def test_main_diagnoses_performance_with_strategy_evidence(tmp_path, monkeypatch, capsys) -> None:
     current_path = tmp_path / "current.json"
     baseline_path = tmp_path / "baseline.json"

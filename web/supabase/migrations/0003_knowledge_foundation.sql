@@ -163,7 +163,8 @@ as $$
     and (claim.review_due_at is null or claim.review_due_at >= now())
     and (target_company_id is null or document.company_id is null or document.company_id = target_company_id)
     and claim.search_vector @@ websearch_to_tsquery('english', trim(search_query))
-  order by relevance desc, claim.last_verified_at desc
+  order by ts_rank(claim.search_vector, websearch_to_tsquery('english', trim(search_query))) desc,
+    claim.last_verified_at desc
   limit greatest(1, least(maximum_results, 20));
 $$;
 

@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from agent.company_intelligence import build_company_intelligence_plan
 from agent.diagnostics import diagnose_performance
 from agent.launch_qa import build_launch_qa
 from agent.strategy import build_strategy_brief, load_claims
@@ -31,6 +32,10 @@ def main() -> int:
     diagnostic_parser.add_argument("--current", required=True, type=Path, help="Current-period metrics JSON file.")
     diagnostic_parser.add_argument("--baseline", required=True, type=Path, help="Baseline-period metrics JSON file.")
     diagnostic_parser.add_argument("--strategy", required=True, type=Path, help="Strategy brief JSON file with evidence.")
+    intelligence_parser = subparsers.add_parser(
+        "company-intelligence", help="Route a new company's discovery and connection work."
+    )
+    intelligence_parser.add_argument("--input", required=True, type=Path, help="Company context JSON file.")
     args = parser.parse_args()
 
     if args.command == "workflow":
@@ -41,6 +46,8 @@ def main() -> int:
         output = build_launch_qa(
             _load_json(args.input), _load_json(args.strategy), _load_json(args.checklist)
         )
+    elif args.command == "company-intelligence":
+        output = build_company_intelligence_plan(_load_json(args.input))
     else:
         strategy = _load_json(args.strategy)
         output = diagnose_performance(
